@@ -1,7 +1,6 @@
 C:\Users\Casper\Desktop\gitHub\mySoft\mySoft\bin\Debug\mySoft.exe.config
 C:\Users\Casper\Desktop\gitHub\mySoft\mySoft\bin\Debug\mySoft.exe
 C:\Users\Casper\Desktop\gitHub\mySoft\mySoft\bin\Debug\mySoft.pdb
-C:\Users\Casper\Desktop\gitHub\mySoft\mySoft\obj\Debug\mySoft.Form1.resources
 C:\Users\Casper\Desktop\gitHub\mySoft\mySoft\obj\Debug\mySoft.Properties.Resources.resources
 C:\Users\Casper\Desktop\gitHub\mySoft\mySoft\obj\Debug\mySoft.csproj.GenerateResource.Cache
 C:\Users\Casper\Desktop\gitHub\mySoft\mySoft\obj\Debug\mySoft.exe
@@ -20,3 +19,4 @@ C:\Users\Casper\Desktop\gitHub\mySoft2\mySoft\obj\Debug\mySoft.Dashboard.resourc
 C:\Users\Casper\Desktop\gitHub\mySoft2\mySoft\obj\Debug\mySoft.Prijava.resources
 C:\Users\Casper\Desktop\gitHub\mySoft2\mySoft\obj\Debug\mySoft.Properties.Resources.resources
 C:\Users\Casper\Desktop\gitHub\mySoft2\mySoft\obj\Debug\mySoft.csproj.GenerateResource.Cache
+C:\Users\Casper\Desktop\gitHub\mysoft\mySoft\obj\Debug\mySoft.Dashboard.resources

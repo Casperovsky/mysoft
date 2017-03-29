@@ -28,367 +28,215 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.deleteLastChar = new System.Windows.Forms.Button();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.titleBar = new System.Windows.Forms.Panel();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.prijaviSeLabel = new System.Windows.Forms.Label();
+            this.border = new System.Windows.Forms.Panel();
+            this.korisnikLabel = new System.Windows.Forms.Label();
+            this.korisnikTextBox = new System.Windows.Forms.TextBox();
+            this.lozinkaTextBox = new System.Windows.Forms.TextBox();
+            this.lozinkaLabel = new System.Windows.Forms.Label();
             this.prijavaButton = new System.Windows.Forms.Button();
-            this.num0 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.num9 = new System.Windows.Forms.Button();
-            this.num8 = new System.Windows.Forms.Button();
-            this.num7 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.num6 = new System.Windows.Forms.Button();
-            this.num5 = new System.Windows.Forms.Button();
-            this.num4 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.num3 = new System.Windows.Forms.Button();
-            this.num2 = new System.Windows.Forms.Button();
-            this.num1 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.titleBar.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // deleteLastChar
+            // titleBar
             // 
-            this.deleteLastChar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.deleteLastChar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.deleteLastChar.FlatAppearance.BorderSize = 0;
-            this.deleteLastChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteLastChar.Location = new System.Drawing.Point(0, 0);
-            this.deleteLastChar.Name = "deleteLastChar";
-            this.deleteLastChar.Size = new System.Drawing.Size(120, 69);
-            this.deleteLastChar.TabIndex = 3;
-            this.deleteLastChar.Text = "<-";
-            this.deleteLastChar.UseVisualStyleBackColor = false;
-            this.deleteLastChar.Click += new System.EventHandler(this.deleteLastChar_Click);
+            this.titleBar.BackColor = System.Drawing.Color.White;
+            this.titleBar.Controls.Add(this.closeButton);
+            this.titleBar.Controls.Add(this.prijaviSeLabel);
+            this.titleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titleBar.Location = new System.Drawing.Point(0, 0);
+            this.titleBar.Name = "titleBar";
+            this.titleBar.Size = new System.Drawing.Size(337, 60);
+            this.titleBar.TabIndex = 0;
             // 
-            // passwordLabel
+            // closeButton
             // 
-            this.passwordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.passwordLabel.Font = new System.Drawing.Font("Open Sans Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.passwordLabel.Location = new System.Drawing.Point(0, 0);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(249, 55);
-            this.passwordLabel.TabIndex = 14;
-            this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.closeButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(292, 12);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(35, 35);
+            this.closeButton.TabIndex = 5;
+            this.closeButton.Text = "X";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // panel1
+            // prijaviSeLabel
             // 
-            this.panel1.Controls.Add(this.passwordLabel);
-            this.panel1.Location = new System.Drawing.Point(56, 163);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 55);
-            this.panel1.TabIndex = 15;
+            this.prijaviSeLabel.AutoSize = true;
+            this.prijaviSeLabel.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.prijaviSeLabel.Location = new System.Drawing.Point(3, 19);
+            this.prijaviSeLabel.Name = "prijaviSeLabel";
+            this.prijaviSeLabel.Size = new System.Drawing.Size(99, 28);
+            this.prijaviSeLabel.TabIndex = 6;
+            this.prijaviSeLabel.Text = "Prijavi se";
             // 
-            // panel2
+            // border
             // 
-            this.panel2.Controls.Add(this.prijavaButton);
-            this.panel2.Controls.Add(this.num0);
-            this.panel2.Controls.Add(this.deleteLastChar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Font = new System.Drawing.Font("Open Sans Semibold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.panel2.Location = new System.Drawing.Point(0, 431);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(360, 69);
-            this.panel2.TabIndex = 16;
+            this.border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.border.Dock = System.Windows.Forms.DockStyle.Top;
+            this.border.Location = new System.Drawing.Point(0, 60);
+            this.border.Name = "border";
+            this.border.Size = new System.Drawing.Size(337, 1);
+            this.border.TabIndex = 1;
+            // 
+            // korisnikLabel
+            // 
+            this.korisnikLabel.AutoSize = true;
+            this.korisnikLabel.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.korisnikLabel.Location = new System.Drawing.Point(13, 183);
+            this.korisnikLabel.Name = "korisnikLabel";
+            this.korisnikLabel.Size = new System.Drawing.Size(75, 22);
+            this.korisnikLabel.TabIndex = 2;
+            this.korisnikLabel.Text = "Korisnik:";
+            // 
+            // korisnikTextBox
+            // 
+            this.korisnikTextBox.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.korisnikTextBox.Location = new System.Drawing.Point(107, 180);
+            this.korisnikTextBox.Name = "korisnikTextBox";
+            this.korisnikTextBox.Size = new System.Drawing.Size(220, 29);
+            this.korisnikTextBox.TabIndex = 2;
+            // 
+            // lozinkaTextBox
+            // 
+            this.lozinkaTextBox.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lozinkaTextBox.Location = new System.Drawing.Point(106, 224);
+            this.lozinkaTextBox.Name = "lozinkaTextBox";
+            this.lozinkaTextBox.Size = new System.Drawing.Size(220, 29);
+            this.lozinkaTextBox.TabIndex = 3;
+            this.lozinkaTextBox.UseSystemPasswordChar = true;
+            // 
+            // lozinkaLabel
+            // 
+            this.lozinkaLabel.AutoSize = true;
+            this.lozinkaLabel.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lozinkaLabel.Location = new System.Drawing.Point(12, 227);
+            this.lozinkaLabel.Name = "lozinkaLabel";
+            this.lozinkaLabel.Size = new System.Drawing.Size(70, 22);
+            this.lozinkaLabel.TabIndex = 4;
+            this.lozinkaLabel.Text = "Lozinka:";
             // 
             // prijavaButton
             // 
-            this.prijavaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.prijavaButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.prijavaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.prijavaButton.FlatAppearance.BorderSize = 0;
             this.prijavaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prijavaButton.Location = new System.Drawing.Point(240, 0);
+            this.prijavaButton.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.prijavaButton.ForeColor = System.Drawing.Color.White;
+            this.prijavaButton.Location = new System.Drawing.Point(139, 290);
             this.prijavaButton.Name = "prijavaButton";
-            this.prijavaButton.Size = new System.Drawing.Size(120, 69);
-            this.prijavaButton.TabIndex = 5;
-            this.prijavaButton.Text = ">>";
+            this.prijavaButton.Size = new System.Drawing.Size(187, 40);
+            this.prijavaButton.TabIndex = 4;
+            this.prijavaButton.Text = "Prijavi se";
             this.prijavaButton.UseVisualStyleBackColor = false;
             this.prijavaButton.Click += new System.EventHandler(this.prijavaButton_Click);
             // 
-            // num0
+            // panel1
             // 
-            this.num0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.num0.Dock = System.Windows.Forms.DockStyle.Left;
-            this.num0.FlatAppearance.BorderSize = 0;
-            this.num0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num0.Location = new System.Drawing.Point(120, 0);
-            this.num0.Name = "num0";
-            this.num0.Size = new System.Drawing.Size(120, 69);
-            this.num0.TabIndex = 4;
-            this.num0.Text = "0";
-            this.num0.UseVisualStyleBackColor = false;
-            this.num0.Click += new System.EventHandler(this.num0_Click);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.errorLabel);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.prijavaButton);
+            this.panel1.Controls.Add(this.lozinkaTextBox);
+            this.panel1.Controls.Add(this.korisnikLabel);
+            this.panel1.Controls.Add(this.korisnikTextBox);
+            this.panel1.Controls.Add(this.lozinkaLabel);
+            this.panel1.Controls.Add(this.border);
+            this.panel1.Controls.Add(this.titleBar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(339, 342);
+            this.panel1.TabIndex = 7;
             // 
-            // panel3
+            // errorLabel
             // 
-            this.panel3.Controls.Add(this.num9);
-            this.panel3.Controls.Add(this.num8);
-            this.panel3.Controls.Add(this.num7);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Font = new System.Drawing.Font("Open Sans Semibold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.panel3.Location = new System.Drawing.Point(0, 362);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(360, 69);
-            this.panel3.TabIndex = 17;
-            // 
-            // num9
-            // 
-            this.num9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.num9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.num9.FlatAppearance.BorderSize = 0;
-            this.num9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num9.Location = new System.Drawing.Point(240, 0);
-            this.num9.Name = "num9";
-            this.num9.Size = new System.Drawing.Size(120, 69);
-            this.num9.TabIndex = 5;
-            this.num9.Text = "9";
-            this.num9.UseVisualStyleBackColor = false;
-            this.num9.Click += new System.EventHandler(this.num9_Click);
-            // 
-            // num8
-            // 
-            this.num8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.num8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.num8.FlatAppearance.BorderSize = 0;
-            this.num8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num8.Location = new System.Drawing.Point(120, 0);
-            this.num8.Name = "num8";
-            this.num8.Size = new System.Drawing.Size(120, 69);
-            this.num8.TabIndex = 4;
-            this.num8.Text = "8";
-            this.num8.UseVisualStyleBackColor = false;
-            this.num8.Click += new System.EventHandler(this.num8_Click);
-            // 
-            // num7
-            // 
-            this.num7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.num7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.num7.FlatAppearance.BorderSize = 0;
-            this.num7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num7.Location = new System.Drawing.Point(0, 0);
-            this.num7.Name = "num7";
-            this.num7.Size = new System.Drawing.Size(120, 69);
-            this.num7.TabIndex = 7;
-            this.num7.Text = "7";
-            this.num7.UseVisualStyleBackColor = false;
-            this.num7.Click += new System.EventHandler(this.num7_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.num6);
-            this.panel4.Controls.Add(this.num5);
-            this.panel4.Controls.Add(this.num4);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Font = new System.Drawing.Font("Open Sans Semibold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.panel4.Location = new System.Drawing.Point(0, 293);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(360, 69);
-            this.panel4.TabIndex = 18;
-            // 
-            // num6
-            // 
-            this.num6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.num6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.num6.FlatAppearance.BorderSize = 0;
-            this.num6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num6.Location = new System.Drawing.Point(240, 0);
-            this.num6.Name = "num6";
-            this.num6.Size = new System.Drawing.Size(120, 69);
-            this.num6.TabIndex = 5;
-            this.num6.Text = "6";
-            this.num6.UseVisualStyleBackColor = false;
-            this.num6.Click += new System.EventHandler(this.num6_Click);
-            // 
-            // num5
-            // 
-            this.num5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.num5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.num5.FlatAppearance.BorderSize = 0;
-            this.num5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num5.Location = new System.Drawing.Point(120, 0);
-            this.num5.Name = "num5";
-            this.num5.Size = new System.Drawing.Size(120, 69);
-            this.num5.TabIndex = 4;
-            this.num5.Text = "5";
-            this.num5.UseVisualStyleBackColor = false;
-            this.num5.Click += new System.EventHandler(this.num5_Click);
-            // 
-            // num4
-            // 
-            this.num4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.num4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.num4.FlatAppearance.BorderSize = 0;
-            this.num4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num4.Location = new System.Drawing.Point(0, 0);
-            this.num4.Name = "num4";
-            this.num4.Size = new System.Drawing.Size(120, 69);
-            this.num4.TabIndex = 7;
-            this.num4.Text = "4";
-            this.num4.UseVisualStyleBackColor = false;
-            this.num4.Click += new System.EventHandler(this.num4_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.num3);
-            this.panel5.Controls.Add(this.num2);
-            this.panel5.Controls.Add(this.num1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Font = new System.Drawing.Font("Open Sans Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panel5.Location = new System.Drawing.Point(0, 224);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(360, 69);
-            this.panel5.TabIndex = 19;
-            // 
-            // num3
-            // 
-            this.num3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.num3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.num3.FlatAppearance.BorderSize = 0;
-            this.num3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num3.Location = new System.Drawing.Point(240, 0);
-            this.num3.Name = "num3";
-            this.num3.Size = new System.Drawing.Size(120, 69);
-            this.num3.TabIndex = 5;
-            this.num3.Text = "3";
-            this.num3.UseVisualStyleBackColor = false;
-            this.num3.Click += new System.EventHandler(this.num3_Click);
-            // 
-            // num2
-            // 
-            this.num2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.num2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.num2.FlatAppearance.BorderSize = 0;
-            this.num2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num2.Location = new System.Drawing.Point(120, 0);
-            this.num2.Name = "num2";
-            this.num2.Size = new System.Drawing.Size(120, 69);
-            this.num2.TabIndex = 4;
-            this.num2.Text = "2";
-            this.num2.UseVisualStyleBackColor = false;
-            this.num2.Click += new System.EventHandler(this.num2_Click);
-            // 
-            // num1
-            // 
-            this.num1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
-            this.num1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.num1.FlatAppearance.BorderSize = 0;
-            this.num1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.num1.Location = new System.Drawing.Point(0, 0);
-            this.num1.Name = "num1";
-            this.num1.Size = new System.Drawing.Size(120, 69);
-            this.num1.TabIndex = 7;
-            this.num1.Text = "1";
-            this.num1.UseVisualStyleBackColor = false;
-            this.num1.Click += new System.EventHandler(this.num1_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.panel6.Controls.Add(this.button13);
-            this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(360, 144);
-            this.panel6.TabIndex = 20;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Allura", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(110, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 60);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "mySoft";
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(9, 153);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(318, 23);
+            this.errorLabel.TabIndex = 8;
+            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(96, 112);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(160, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 22);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Unesite svoju lozinku";
+            this.label2.Size = new System.Drawing.Size(109, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "www.aviasoft.ba";
             // 
-            // button13
+            // pictureBox1
             // 
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = global::mySoft.Properties.Resources.Close_Window_32;
-            this.button13.Location = new System.Drawing.Point(315, 12);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(33, 33);
-            this.button13.TabIndex = 2;
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.pictureBox1.Image = global::mySoft.Properties.Resources.Magazine_50__2_;
+            this.pictureBox1.Location = new System.Drawing.Point(70, 96);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 54);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(122, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 42);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "aviaSoft";
             // 
             // Prijava
             // 
+            this.AcceptButton = this.prijavaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(360, 500);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.CancelButton = this.closeButton;
+            this.ClientSize = new System.Drawing.Size(339, 342);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Prijava";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava";
+            this.titleBar.ResumeLayout(false);
+            this.titleBar.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button deleteLastChar;
-        private System.Windows.Forms.Label passwordLabel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel titleBar;
+        private System.Windows.Forms.Panel border;
+        private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Label prijaviSeLabel;
+        private System.Windows.Forms.Label korisnikLabel;
+        private System.Windows.Forms.TextBox korisnikTextBox;
+        private System.Windows.Forms.TextBox lozinkaTextBox;
+        private System.Windows.Forms.Label lozinkaLabel;
         private System.Windows.Forms.Button prijavaButton;
-        private System.Windows.Forms.Button num0;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button num9;
-        private System.Windows.Forms.Button num8;
-        private System.Windows.Forms.Button num7;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button num6;
-        private System.Windows.Forms.Button num5;
-        private System.Windows.Forms.Button num4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button num3;
-        private System.Windows.Forms.Button num2;
-        private System.Windows.Forms.Button num1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button13;
-        private string password;
+        private System.Windows.Forms.Label errorLabel;
     }
 }

@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration; //potrebno za pomjeranje forme
-using MySql.Data;
-using MySql.Data.MySqlClient;
+using System.Runtime.InteropServices; //potrebno za pomjeranje forme
+using System.Security.Cryptography; //potrebno hesovanje sifri
 
 namespace mySoft
 {
@@ -18,137 +17,67 @@ namespace mySoft
         public Prijava()
         {
             InitializeComponent();
+            this.titleBar.MouseDown += Panel_MouseDown; //pomjeranje forme naslovne
+        }
+        //Potrebno za pomjeranje forme
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd,
+                         int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        //kraj pomjeranje forme
+        private void Panel_MouseDown(object sender,
+        System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void clearLabel(){
-            if (passwordLabel.Text.Equals("Pogrešna lozinka"))
-            {
-              this.password ="";
-              passwordLabel.Text ="";
-            }
-        }
-        private void num1_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            {
-                this.password += 1;
-                passwordLabel.Text += "*";
-            }
-        }
-
-        private void num2_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            this.password += 2;
-            passwordLabel.Text += "*";
-        }
-
-        private void num3_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            this.password += 3;
-            passwordLabel.Text += "*";
-        }
-
-        private void num4_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            this.password += 4;
-            passwordLabel.Text += "*";
-        }
-
-        private void num5_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            this.password += 5;
-            passwordLabel.Text += "*";
-        }
-
-        private void num6_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            this.password += 6;
-            passwordLabel.Text += "*";
-        }
-
-        private void num7_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            this.password += 7;
-            passwordLabel.Text += "*";
-        }
-
-        private void num8_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            this.password += 8;
-            passwordLabel.Text += "*";
-        }
-
-        private void num9_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            this.password += 9;
-            passwordLabel.Text += "*";
-        }
-
-        private void num0_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            this.password += 0;
-            passwordLabel.Text += "*";
-        }
-
-        private void deleteLastChar_Click(object sender, EventArgs e)
-        {
-            clearLabel();
-            if (this.password.Length > 0)
-            {
-                this.password = password.Remove(this.password.Length - 1);
-                passwordLabel.Text = passwordLabel.Text.Remove(passwordLabel.Text.Length - 1);
-            }
-        }
-        private static string mySqlExecute(String command)
-        {
-            string server = ConfigurationManager.AppSettings["server"].ToString();
-            string username = ConfigurationManager.AppSettings["username"].ToString();
-            string password = ConfigurationManager.AppSettings["password"].ToString();
-            string database = ConfigurationManager.AppSettings["database"].ToString();
-
-            MySqlConnection conn = new MySqlConnection(@"server=" + server + ";userid=" + username + ";"
-            + "password=" + password + ";database=" + database);
-            conn.Open();
-            MySqlCommand sqlCommand = new MySqlCommand(@command, conn);
-            string com = "0";
-            if (sqlCommand.ExecuteScalar() != null)
-            {
-                com = sqlCommand.ExecuteScalar().ToString();
-            }
-            if (conn != null)
-            {
-                conn.Close();
-            }
-            return com;
         }
 
         private void prijavaButton_Click(object sender, EventArgs e)
         {
             String command = "SELECT korisnik.Id FROM korisnik "
-                + "where korisnik.Sifra = \"" + password + "\"";
-           // MessageBox.Show(command);
-            int korisnikId = Convert.ToInt32(mySqlExecute(command));
+                + " where korisnik.Ime = \"" + korisnikTextBox.Text + "\"";
+            //MessageBox.Show(command);
+            int korisnikId = Convert.ToInt32(mySQLConnection.mySqlExecute(command));
             if (korisnikId > 0)
             {
-                DialogResult = DialogResult.OK;
+                command = "SELECT korisnik.Sifra FROM korisnik "
+                + " where korisnik.Id = " + korisnikId;
+                /* Extract the bytes */
+
+                byte[] hashBytes = Convert.FromBase64String(mySQLConnection.mySqlExecute(command));
+                /* Get the salt */
+                byte[] salt = new byte[16];
+                Array.Copy(hashBytes, 0, salt, 0, 16);
+                /* Compute the hash on the password the user entered */
+                var pbkdf2 = new Rfc2898DeriveBytes(lozinkaTextBox.Text, salt, 1000);
+                byte[] hash = pbkdf2.GetBytes(20);
+                /* Compare the results */
+                for (int i = 0; i < 20; i++)
+                {
+                    if (hashBytes[i + 16] != hash[i])
+                    {
+                        errorLabel.Text = "Pogrešna lozinka.";
+                        break;
+                    }
+                    else
+                    {
+                        DialogResult = DialogResult.OK;
+                    }
+                }
             }
-            else
-            {
-                passwordLabel.Text = "Pogrešna lozinka";
-            }
+            else errorLabel.Text = "Pogrešno korisničko ime.";
         }
 
     }
