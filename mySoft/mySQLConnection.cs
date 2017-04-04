@@ -33,7 +33,22 @@ namespace mySoft
             }
             return com;
         }
+        public static MySqlDataAdapter myDataAdapterSQL(String command)
+        {
+            string server = ConfigurationManager.AppSettings["server"].ToString();
+            string username = ConfigurationManager.AppSettings["username"].ToString();
+            string password = ConfigurationManager.AppSettings["password"].ToString();
+            string database = ConfigurationManager.AppSettings["database"].ToString();
 
+            MySqlConnection conn = new MySqlConnection(@"server=" + server + ";userid=" + username + ";"
+            + "password=" + password + ";database=" + database);
+            MySqlDataAdapter sda = new MySqlDataAdapter(@command, conn);
+            if (conn != null)
+            {
+                conn.Close();
+            }
+            return sda;
+        }
     }
 
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices; //potrebno za pomjeranje forme
 using System.Configuration; //
+using MySql.Data.MySqlClient;
 
 namespace mySoft
 {
@@ -39,16 +40,7 @@ namespace mySoft
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-        protected override void OnMouseLeave(EventArgs e)
-        {
-
-            if (this.ClientRectangle.Contains(this.PointToClient(Control.MousePosition)))
-                return;
-            else
-            {
-                base.OnMouseLeave(e);
-            }
-        }
+        
         private void izlazButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -66,6 +58,39 @@ namespace mySoft
         private void sifarnikSubMenu_MouseLeave(object sender, EventArgs e)
         {
             this.sifarnikSubMenu.Visible = false;
+        }
+        private void button_OnMouseLeave(object sender, EventArgs e)
+        {
+
+            if (this.ClientRectangle.Contains(this.PointToClient(Control.MousePosition)))
+                return;
+            else
+            {
+                base.OnMouseLeave(e);
+            }
+        }
+
+        private void artikliButton_Click(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = new List<string> { "Aktivan", "Neaktivan"};
+            statusArtiklaComboBox.DataSource = bs;
+            this.titleLabel.Text = "Šifarnik artikala i usluga";
+            
+            MySqlDataAdapter sda = mySQLConnection.myDataAdapterSQL("SELECT * FROM proizvodjac_robe");
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            proizvodjacArtiklaComboBox.ValueMember = "Id";
+            proizvodjacArtiklaComboBox.DisplayMember = "Naziv";
+            proizvodjacArtiklaComboBox.DataSource = dt;
+            sda = mySQLConnection.myDataAdapterSQL("SELECT * FROM jedinica_mjere");
+            DataTable dt2 = new DataTable();
+            sda.Fill(dt2);
+            jedinicaMjereArtiklaComboBox.ValueMember = "Id";
+            jedinicaMjereArtiklaComboBox.DisplayMember = "Naziv";
+            jedinicaMjereArtiklaComboBox.DataSource = dt2;
+
+
         }
 
 

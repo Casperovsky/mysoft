@@ -47,12 +47,12 @@ namespace mySoft
         private void prijavaButton_Click(object sender, EventArgs e)
         {
             String command = "SELECT korisnik.Id FROM korisnik "
-                + " where korisnik.Ime = \"" + korisnikTextBox.Text + "\"";
+                + " where korisnik.Korisnicko_Ime = \"" + korisnikTextBox.Text + "\"";
             //MessageBox.Show(command);
             int korisnikId = Convert.ToInt32(mySQLConnection.mySqlExecute(command));
             if (korisnikId > 0)
             {
-                command = "SELECT korisnik.Sifra FROM korisnik "
+                command = "SELECT korisnik.Lozinka FROM korisnik "
                 + " where korisnik.Id = " + korisnikId;
                 /* Extract the bytes */
 
