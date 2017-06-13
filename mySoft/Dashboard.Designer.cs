@@ -49,6 +49,7 @@
             this.border = new System.Windows.Forms.Panel();
             this.artikliSifarnikPanel = new System.Windows.Forms.Panel();
             this.sviArtikli = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.split1 = new System.Windows.Forms.Panel();
             this.noviArtikalPanel = new System.Windows.Forms.Panel();
             this.barKodArtiklaCheckBox = new System.Windows.Forms.CheckBox();
@@ -81,18 +82,17 @@
             this.sifraArtiklaTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.topMeniArtikli = new System.Windows.Forms.Panel();
-            this.noviArtikalButton = new System.Windows.Forms.Button();
             this.snimiArtikalButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.noviArtikalButton = new System.Windows.Forms.Button();
             this.left_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.top_panel.SuspendLayout();
             this.sifarnikSubMenu.SuspendLayout();
             this.artikliSifarnikPanel.SuspendLayout();
             this.sviArtikli.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.noviArtikalPanel.SuspendLayout();
             this.topMeniArtikli.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // left_panel
@@ -311,8 +311,8 @@
             this.sifarnikSubMenu.Name = "sifarnikSubMenu";
             this.sifarnikSubMenu.Size = new System.Drawing.Size(204, 157);
             this.sifarnikSubMenu.TabIndex = 2;
-            this.sifarnikSubMenu.Leave += new System.EventHandler(this.sifarnikSubMenu_MouseLeave);
-            this.sifarnikSubMenu.MouseLeave += new System.EventHandler(this.sifarnikSubMenu_MouseLeave);
+            this.sifarnikSubMenu.DockChanged += new System.EventHandler(this.button_OnMouseLeave);
+            this.sifarnikSubMenu.MouseCaptureChanged += new System.EventHandler(this.sifarnikSubMenu_MouseLeave);
             // 
             // button2
             // 
@@ -363,8 +363,6 @@
             this.artikliButton.Text = "Artikli";
             this.artikliButton.UseVisualStyleBackColor = true;
             this.artikliButton.Click += new System.EventHandler(this.artikliButton_Click);
-            this.artikliButton.Leave += new System.EventHandler(this.button_OnMouseLeave);
-            this.artikliButton.MouseLeave += new System.EventHandler(this.button_OnMouseLeave);
             // 
             // border
             // 
@@ -395,6 +393,15 @@
             this.sviArtikli.Name = "sviArtikli";
             this.sviArtikli.Size = new System.Drawing.Size(1037, 319);
             this.sviArtikli.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1037, 319);
+            this.dataGridView1.TabIndex = 0;
             // 
             // split1
             // 
@@ -702,18 +709,6 @@
             this.topMeniArtikli.Size = new System.Drawing.Size(1037, 42);
             this.topMeniArtikli.TabIndex = 1;
             // 
-            // noviArtikalButton
-            // 
-            this.noviArtikalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.noviArtikalButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noviArtikalButton.ForeColor = System.Drawing.Color.White;
-            this.noviArtikalButton.Location = new System.Drawing.Point(6, 4);
-            this.noviArtikalButton.Name = "noviArtikalButton";
-            this.noviArtikalButton.Size = new System.Drawing.Size(75, 33);
-            this.noviArtikalButton.TabIndex = 0;
-            this.noviArtikalButton.Text = "Novi";
-            this.noviArtikalButton.UseVisualStyleBackColor = true;
-            // 
             // snimiArtikalButton
             // 
             this.snimiArtikalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -726,14 +721,17 @@
             this.snimiArtikalButton.Text = "Snimi";
             this.snimiArtikalButton.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // noviArtikalButton
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1037, 319);
-            this.dataGridView1.TabIndex = 0;
+            this.noviArtikalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.noviArtikalButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noviArtikalButton.ForeColor = System.Drawing.Color.White;
+            this.noviArtikalButton.Location = new System.Drawing.Point(6, 4);
+            this.noviArtikalButton.Name = "noviArtikalButton";
+            this.noviArtikalButton.Size = new System.Drawing.Size(75, 33);
+            this.noviArtikalButton.TabIndex = 0;
+            this.noviArtikalButton.Text = "Novi";
+            this.noviArtikalButton.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
@@ -759,10 +757,10 @@
             this.sifarnikSubMenu.ResumeLayout(false);
             this.artikliSifarnikPanel.ResumeLayout(false);
             this.sviArtikli.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.noviArtikalPanel.ResumeLayout(false);
             this.noviArtikalPanel.PerformLayout();
             this.topMeniArtikli.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

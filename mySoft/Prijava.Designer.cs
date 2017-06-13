@@ -40,11 +40,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.titleBar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBar
@@ -82,7 +80,7 @@
             // 
             // border
             // 
-            this.border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(52)))), ((int)(((byte)(65)))));
             this.border.Dock = System.Windows.Forms.DockStyle.Top;
             this.border.Location = new System.Drawing.Point(0, 60);
             this.border.Name = "border";
@@ -128,7 +126,7 @@
             // 
             // prijavaButton
             // 
-            this.prijavaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.prijavaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(52)))), ((int)(((byte)(65)))));
             this.prijavaButton.FlatAppearance.BorderSize = 0;
             this.prijavaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prijavaButton.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -146,7 +144,6 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.errorLabel);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.prijavaButton);
             this.panel1.Controls.Add(this.lozinkaTextBox);
@@ -175,30 +172,21 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(160, 133);
+            this.label2.Location = new System.Drawing.Point(99, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 17);
+            this.label2.Size = new System.Drawing.Size(207, 17);
             this.label2.TabIndex = 7;
-            this.label2.Text = "www.aviasoft.ba";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::mySoft.Properties.Resources.Magazine_50__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(70, 96);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 54);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.label2.Text = "www.mehanickekonstrukcije.com";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(122, 96);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(22, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 42);
+            this.label1.Size = new System.Drawing.Size(289, 30);
             this.label1.TabIndex = 5;
-            this.label1.Text = "aviaSoft";
+            this.label1.Text = "mehaničkeKonstrukcije";
             // 
             // Prijava
             // 
@@ -217,7 +205,6 @@
             this.titleBar.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,7 +221,6 @@
         private System.Windows.Forms.Label lozinkaLabel;
         private System.Windows.Forms.Button prijavaButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label errorLabel;

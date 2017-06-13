@@ -58,16 +58,11 @@ namespace mySoft
         private void sifarnikSubMenu_MouseLeave(object sender, EventArgs e)
         {
             this.sifarnikSubMenu.Visible = false;
+            System.Diagnostics.Debug.WriteLine("button1_MouseCaptureChanged");
         }
         private void button_OnMouseLeave(object sender, EventArgs e)
         {
-
-            if (this.ClientRectangle.Contains(this.PointToClient(Control.MousePosition)))
-                return;
-            else
-            {
-                base.OnMouseLeave(e);
-            }
+            this.sifarnikSubMenu.Visible = false;
         }
 
         private void artikliButton_Click(object sender, EventArgs e)
